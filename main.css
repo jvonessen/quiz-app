@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  dislay: block;
+}
+
+header{
+  margin: auto;
+  text-align: center;
+}
+
+main{
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.button-label {
+  padding: 5px;
+  font-size: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.question-block, .start-quiz{
+  margin-top: 20px;
+}
+
+.question {
+  font-size: 20px;
+}
+
+.answer{
+  margin-bottom: 20px;
+  border: 1px solid grey;
+  padding: 15px;
+  list-style: none;
+}
+
+ul{
+  padding-left: 0px;
+}
+
+.correct{
+  background-color: limegreen;
+  font-weight: bold;
+}
+
+.incorrect{
+  background-color: red;
+}

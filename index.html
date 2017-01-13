@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Motorcycle Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Do you ride?</h1>
+    </header>
+
+    <main>
+
+      <div class="start-quiz">
+        <h2>Let's test your motorcycle knowledge! Click 'Go' to start the quiz. Good Luck! </h2>
+        <button id="start-button">
+          <span class="button-label">Go!</span>
+        </button>
+      </div>
+
+      <div class="question-page hidden">
+        <div class="question-list">
+          <!-- questions will populate here -->
+        </div>
+      </div>
+
+      <div class="score-page hidden">
+        <h3>Congratulations! You scored <span class="final-score"></span> out of 5.</h3>
+        <h4>Would you like to try again?</h4>
+        <button id="restart-quiz">
+          <span class="button-label">Try again</span>
+        </button>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="http://underscorejs.org/underscore.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
