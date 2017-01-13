@@ -157,7 +157,7 @@ $('#restart-quiz').click(function(event) {
   $(".question-page section:nth-child(1)").removeClass("hidden")
 });
 
-$('.answer').on("click", ".answer", function(event) {
+$('.answer').on("click touchstart", ".answer", function(event) {
   checkAnswer(state, this);
   $(".next-question").removeClass("hidden");
 });
