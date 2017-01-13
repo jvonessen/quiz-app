@@ -157,11 +157,11 @@ $('#restart-quiz').click(function(event) {
   $(".question-page section:nth-child(1)").removeClass("hidden")
 });
 
-$('.question-page').on("click", ".answer", function(event) {
+$('.answer').on("click", ".answer", function(event) {
   checkAnswer(state, this);
   $(".next-question").removeClass("hidden");
 });
 
-$(".question-list").on("click", ".next-question", function(event) {
+$(".question-list").on("click touchstart", ".next-question", function(event) {
   advanceQuestion(state, this);
 });
