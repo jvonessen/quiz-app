@@ -62,9 +62,6 @@ var state = {
   current: 1
 };
 
-
-
-
 // manipulating functions
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -97,9 +94,6 @@ var checkAnswer = function(state, element){
     $(correctLi).append("<br /> " + currentExplanation);
   }
 };
-
-
-
 
 // rendering functions
 var renderQuestions = function(state, element) {
