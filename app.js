@@ -36,7 +36,7 @@ var state = {
     {question: "Complete the title for the following movie, 'The World's Fastest ___'",
     answers: ["Indian", "Man", "Sunday", "Turtle"],
     correct: "Indian",
-    explanation: "Anthony Hopkins stared in this 2005 movie."},
+    explanation: "Anthony Hopkins stared in this 2005 film."},
 
     {question: "What motorcycle is commonly accepted as indestructible?",
     answers: ["KLR650", "DR650", "SV650", "XT650"],
@@ -86,7 +86,7 @@ var checkAnswer = function(state, element){
   var correctAnswer = _.findWhere(state.questions, {question: currentQuestion}).correct;
   var currentExplanation = _.findWhere(state.questions, {question: currentQuestion}).explanation;
   var correctLi = $(element).siblings("li:contains('" + correctAnswer + "')");
-  var clicked = $(element).html()
+  var clicked = $(element).html();
   if (clicked === correctAnswer) {
     $(element).addClass("correct");
     $(element).append("<br /> " + currentExplanation);
@@ -104,9 +104,9 @@ var checkAnswer = function(state, element){
 // rendering functions
 var renderQuestions = function(state, element) {
   var randQuestions = shuffle(state.questions);
-  var questionHTML = []
+  var questionHTML = [];
   for (i=0; i<=4; i++) {
-    var randAnswers = shuffle(state.questions[i].answers)
+    var randAnswers = shuffle(state.questions[i].answers);
     questionHTML.push(
       '<section class="question-block hidden"><span class="question">' +
       state.questions[i].question +'</span><ul class="answers"> \
@@ -127,12 +127,10 @@ var advanceQuestion = function(state, element) {
     $(".next-question").addClass("hidden");
     $(element).closest(".question-block").addClass("hidden");
     $(element).closest(".question-block").next().removeClass("hidden");
-    console.log(state.score);
   } else if (state.current > 5) {
     $(".question-page").addClass("hidden");
     $(".score-page").removeClass("hidden");
     renderScore(state, $(".score-page"));
-    console.log(state.score);
     state.current = 1;
     state.score = 0;
   }
@@ -141,9 +139,6 @@ var advanceQuestion = function(state, element) {
 var renderScore = function(state, element){
   $('.final-score').html(state.score);
 }
-
-
-
 
 // event listeners
 $('#start-button').click(function(event) {
@@ -160,11 +155,11 @@ $('#restart-quiz').click(function(event) {
   $(".question-page section:nth-child(1)").removeClass("hidden")
 });
 
-$('.question-list').on("click touchstart", ".answer", function(event) {
+$('.question-list').on("click", ".answer", function(event) {
   checkAnswer(state, this);
   $(".next-question").removeClass("hidden");
 });
 
-$(".question-list").on("click touchstart", ".next-question", function(event) {
+$(".question-list").on("click", ".next-question", function(event) {
   advanceQuestion(state, this);
 });
