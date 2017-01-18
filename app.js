@@ -9,13 +9,13 @@ var state = {
     {question: "Which of the following can be used to substitute hydraulic fluid?",
     answers: ["Baby oil", "Engine oil", "Bacon grease", "Brake fluid"],
     correct: "Baby oil",
-    explanation: "Any mineral oil will work, but baby oil is typically \
-    only mineral oil with fragrance. Using it can lead to rose scented clutch levers."},
+    explanation: "Any mineral oil will work, but since baby oil is typically \
+    only mineral oil with fragrance. Using it can lead to wonderful rose scented clutch levers."},
 
     {question: "Which is not a common style of motorcycle?",
     answers: ["Weasel", "Naked", "Rat", "Supermotard"],
     correct: "Weasel",
-    explanation: "Unlike Firefox, there are no motorcycle forks with the name Ice Weasel."},
+    explanation: "Unlike Firefox, there are no motorcycles with the name Ice Weasel."},
 
     {question: "Which is not a leading cause of motorcycle crashes?",
     answers: ["Prius drivers", "Target fixation", "Wet leaves", "Low-siding"],
@@ -123,15 +123,18 @@ var renderQuestions = function(state, element) {
 
 var advanceQuestion = function(state, element) {
   state.current += 1;
-  if (state.current < 5) {
+  if (state.current <= 5) {
     $(".next-question").addClass("hidden");
     $(element).closest(".question-block").addClass("hidden");
     $(element).closest(".question-block").next().removeClass("hidden");
-  } else if (state.current == 5) {
+    console.log(state.score);
+  } else if (state.current > 5) {
     $(".question-page").addClass("hidden");
     $(".score-page").removeClass("hidden");
     renderScore(state, $(".score-page"));
+    console.log(state.score);
     state.current = 1;
+    state.score = 0;
   }
 };
 
@@ -162,6 +165,6 @@ $('.question-list').on("click touchstart", ".answer", function(event) {
   $(".next-question").removeClass("hidden");
 });
 
-$(".question-list").on("click", ".next-question", function(event) {
+$(".question-list").on("click touchstart", ".next-question", function(event) {
   advanceQuestion(state, this);
 });

@@ -5,6 +5,9 @@
 body {
   font-family: 'Roboto', sans-serif;
   dislay: block;
+  background: url(images/Yamaha-FZ-07-static-BB-590x393.jpg) no-repeat center 1px;
+  background-color: #60613B;
+  background-size: 80%;
 }
 
 header{
@@ -15,7 +18,16 @@ header{
 main{
   margin: auto;
   max-width: 600px;
+  border-radius: 25px;
   text-align: center;
+  padding: 20px;
+  background-color: rgba(192, 190, 195, .8);
+}
+
+h1{
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
 }
 
 .button-label {
@@ -36,10 +48,11 @@ button:hover {
 }
 
 .question {
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .answer{
+  font-size: 18px;
   margin-bottom: 20px;
   border: 1px solid grey;
   padding: 15px;
@@ -51,10 +64,10 @@ ul{
 }
 
 .correct{
-  background-color: limegreen;
+  background-color: #00BD1A;
   font-weight: bold;
 }
 
 .incorrect{
-  background-color: red;
+  background-color: #B5192F;
 }
